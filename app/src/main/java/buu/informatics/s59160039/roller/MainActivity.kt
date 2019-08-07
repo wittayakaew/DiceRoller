@@ -14,11 +14,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener{rollDrive()}
+        val resetButton: Button = findViewById(R.id.reset_button)
+        resetButton.setOnClickListener{resetRoll()}
     }
     private fun rollDrive(){
         val random = Random().nextInt(6)+1
         val resultText: TextView = findViewById(R.id.result_text)
         resultText.text = random.toString()
         Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
+    }
+
+    private fun resetRoll(){
+        val resultText: TextView = findViewById(R.id.result_text)
+        resultText.text = 0.toString()
     }
 }
