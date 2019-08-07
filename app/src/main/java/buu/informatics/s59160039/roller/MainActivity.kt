@@ -3,7 +3,9 @@ package buu.informatics.s59160039.roller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener{rollDrive()}
     }
     private fun rollDrive(){
+        val random = Random().nextInt(6)+1
+        val resultText: TextView = findViewById(R.id.result_text)
+        resultText.text = random.toString()
         Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
     }
 }
